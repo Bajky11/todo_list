@@ -1,5 +1,4 @@
 import Item from "../list_item/Item"
-//import { useState, useEffect } from "react"
 import './List.css'
 
 const List = ({ items, resolveCompleted, deleteItem }) => {

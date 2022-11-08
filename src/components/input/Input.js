@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Error from '../error/Error'
 
 const Input = ({ items, updateItems }) => {
     const [inputValue, setInputValue] = useState("");
@@ -12,7 +13,8 @@ const Input = ({ items, updateItems }) => {
         <div className="input">
             <input type="text" onChange={(event) => setInputValue(event.target.value)} />
             <p>{inputValue}</p>
-            <button onClick={addItem}>OK</button>
+            {inputValue === "" && <Error />}
+            <button disabled={inputValue === ""} onClick={addItem}>OK</button>
         </div>
     );
 }
