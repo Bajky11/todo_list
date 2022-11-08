@@ -1,4 +1,4 @@
-import Item from "../list_item/Item"
+import Item from "../item/Item"
 import './List.css'
 
 const List = ({ items, resolveCompleted, deleteItem }) => {

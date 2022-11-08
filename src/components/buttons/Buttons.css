@@ -1,0 +1,10 @@
+.cross-button {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+
+}
+
+.cross-button:hover {
+    background-color: rgba(255, 0, 0, 0.74);
+}
