@@ -2,7 +2,7 @@ import GenericTable from "./GenericTable";
 import { useState, useEffect } from 'react'
 import './Table.css'
 
-const FilterTable = ({ baseUri, columns, filters }) => {
+const FilterTable2 = ({ baseUri, columns, filters }) => {
 
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
@@ -26,13 +26,9 @@ const FilterTable = ({ baseUri, columns, filters }) => {
         <div className="table">
             {
                 filters && filters.map(filter =>
-                    <button
-                        onClick={() => {
-                            setFilteredData(filter.function(data, 1))
-                        }}
-                    >
-                        {filter.title}
-                    </button>
+                    filter.component((event) => {
+                        setFilteredData(filter.function(data, event.target.value))
+                    })
                 )
 
             }
@@ -41,4 +37,4 @@ const FilterTable = ({ baseUri, columns, filters }) => {
     );
 }
 
-export default FilterTable;
+export default FilterTable2;

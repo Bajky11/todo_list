@@ -4,7 +4,7 @@ const GenericTable = ({ data, columns, filters }) => {
 
     return (
         <>
-            <div className="table">
+            <div className="generic-table">
                 <table>
                     {
                         data.map((item, id) => {

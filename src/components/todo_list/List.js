@@ -1,5 +1,5 @@
-import Item from "../item/Item"
-import './List.css'
+import './TodoList.css';
+import Item from './Item';
 
 const List = ({ items, resolveCompleted, deleteItem }) => {
 
