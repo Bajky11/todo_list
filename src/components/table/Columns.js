@@ -1,3 +1,10 @@
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+
 //for: https://jsonplaceholder.typicode.com/todos
 export const todos_columns = [
     {
@@ -8,7 +15,7 @@ export const todos_columns = [
     },
     {
         attribute: "id",
-        component: (item) => <button>{item.id}</button>
+        component: (item, onClick) => <Link to="/detail" >tlacitko</Link>
     }
 ]
 

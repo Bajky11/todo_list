@@ -5,7 +5,7 @@ export const filters = [
     },
     {
         title: "Completed",
-        function: (data, criterium) => { return [...data.filter(item => item.completed === true)] }
+        function: (data) => { return [...data.filter(item => item.completed === true)] }
     }
 ]
 

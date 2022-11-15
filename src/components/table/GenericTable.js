@@ -1,4 +1,15 @@
 import './Table.css'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+
+const goToDetail = (id) => {
+    console.log("click");
+    < Link to="/detail" >{id}</Link >
+}
 
 const GenericTable = ({ data, columns, filters }) => {
 
@@ -13,7 +24,8 @@ const GenericTable = ({ data, columns, filters }) => {
                                     {columns.map((column, id) => {
                                         return (
                                             <td key={id}>
-                                                {column?.component ? column.component(item) : item[column.attribute]}
+
+                                                {column?.component ? column.component(item, () => goToDetail(item.id)) : item[column.attribute]}
                                             </td>
                                         )
                                     })}

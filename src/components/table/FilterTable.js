@@ -30,6 +30,7 @@ const FilterTable = ({ baseUri, columns, filters }) => {
                         <button
                             onClick={() => {
                                 setFilteredData(filter.function(data, 1))
+
                             }}
                         >
                             {filter.title}
