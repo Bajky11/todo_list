@@ -24,14 +24,16 @@ const FilterTable2 = ({ baseUri, columns, filters }) => {
     return (
 
         <div className="table">
-            {
-                filters && filters.map(filter =>
-                    filter.component((event) => {
-                        setFilteredData(filter.function(data, event.target.value))
-                    })
-                )
 
-            }
+            <div className="filters">
+                {
+                    filters && filters.map(filter =>
+                        filter.component((event) => {
+                            setFilteredData(filter.function(data, event.target.value))
+                        })
+                    )
+                }
+            </div>
             <GenericTable data={filteredData} columns={columns}></GenericTable>
         </div>
     );

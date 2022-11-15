@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Error from '../error/Error'
 import './Input.css'
 
 const Input = ({ items, updateItems }) => {
@@ -12,9 +11,11 @@ const Input = ({ items, updateItems }) => {
 
     return (
         <div className="input">
-            <input type="text" onChange={(event) => setInputValue(event.target.value)} />
-            {inputValue === "" && <Error />}
-            <button disabled={inputValue === ""} onClick={addItem}>OK</button>
+            <fieldset>
+                {inputValue === "" && <legend>Error</legend>}
+                <input type="text" onChange={(event) => setInputValue(event.target.value)} />
+                <button disabled={inputValue === ""} onClick={addItem}>OK</button>
+            </fieldset>
         </div>
     );
 }

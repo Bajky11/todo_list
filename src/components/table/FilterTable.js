@@ -24,18 +24,19 @@ const FilterTable = ({ baseUri, columns, filters }) => {
     return (
 
         <div className="table">
-            {
-                filters && filters.map(filter =>
-                    <button
-                        onClick={() => {
-                            setFilteredData(filter.function(data, 1))
-                        }}
-                    >
-                        {filter.title}
-                    </button>
-                )
-
-            }
+            <div className="filters">
+                {
+                    filters && filters.map(filter =>
+                        <button
+                            onClick={() => {
+                                setFilteredData(filter.function(data, 1))
+                            }}
+                        >
+                            {filter.title}
+                        </button>
+                    )
+                }
+            </div>
             <GenericTable data={filteredData} columns={columns}></GenericTable>
         </div>
     );
