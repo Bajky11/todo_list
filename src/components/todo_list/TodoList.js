@@ -34,7 +34,7 @@ const TodoList = () => {
                 setItems(json);
             }
         };
-        fetchData("https://jsonplaceholder.typicode.com/todos")
+        fetchData("http://localhost:3004/todos")
     }, [])
 
     useEffect(() => {

@@ -1,5 +1,5 @@
 body {
-  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #2755aa, #1277eb);
+  background-image: white;
   margin: 30px;
 }
 
@@ -8,6 +8,23 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  color: black;
+}
 
-  color: white;
+.App ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.App li{
+  width: 80px;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 2px;
+  text-decoration: none !important;
+  
 }

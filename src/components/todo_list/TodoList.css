@@ -1,38 +1,40 @@
 .todolist {
     padding: 10px;
-    width: 90%;
+   
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 
     background-color: rgb(32, 32, 32);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
+    color: white;
     border-radius: 10px;
 }
 
 .todolist .list {
-    padding: 40px;
+    padding: 0px 40px 0px 40px;
     overflow-y: scroll;
-    max-height: 300px;
+    max-height: 400px;
     width: 90%;
 }
 
 .todolist .item {
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 5px;
-    margin-top: 5px;
+    margin-bottom: 5px;
 
     display: flex;
     align-items: center;
     justify-content: left;
     flex-direction: row;
     gap: 10px;
+
+    
 }
 
 .todolist .item:hover {

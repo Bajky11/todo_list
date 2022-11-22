@@ -6,6 +6,8 @@ import PagingTable from './components/table/PagingTable'
 import { todos_columns, users_column } from './components/table/Columns';
 import { filters2, filters } from './components/table/Filters';
 import TodoList from './components/todo_list/TodoList';
+import Screen from "./components/screens/Screen"
+import ItemDetail from  "./components/todo_list/ItemDetail"
 //React router
 import {
   BrowserRouter as Router,
@@ -18,133 +20,97 @@ import {
 
 function App() {
 
-  //for: https://jsonplaceholder.typicode.com/todos
-  const todos_columns = [
-    {
-      attribute: "userId"
-    },
-    {
-      attribute: "title"
-    },
-    {
-      attribute: "id",
-      component: (item, onClick) => <Link to="/detail" >abcd</Link>
-    }
-  ]
-
   return (
-    <>
+    <div className="App" >
 
       <Router>
-        <div>
           <nav>
             <ul>
               <li>
-                <Link to="/1">1</Link>
-              </li>
-              <li>
-                <Link to="/">Home</Link>
+                <Link to="/Home">Home</Link>
               </li>
               <li>
                 <Link to="/todolist">Seznam úkolů</Link>
               </li>
               <li>
-                <Link to="/table_with_filter_1">Deklarativní tabulka s filtrem 1</Link>
+                <Link to="/table_with_button_filter">Tabulka s tlačítkovým filtrem</Link>
               </li>
               <li>
-                <Link to="/table_with_filter_2">Deklarativní tabulka s filtrem 1</Link>
+                <Link to="/table_with_input_filter">Tabulka s input filtrem</Link>
               </li>
               <li>
-                <Link to="/table_with_paging">Deklarativní tabulka se stránkováním</Link>
+                <Link to="/table_with_pagging">Tabulka se stránkováním</Link>
               </li>
             </ul>
           </nav>
 
+
           <Switch>
 
-            <Route path="/1">
-
-
-
+            <Route path="/Home">
+              <Screen
+                title="Home"
+                component={<p>Domovská stránka s rozcestníkem</p>}
+              />
             </Route>
+
             <Route path="/detail">
-
-
+              <Screen
+                title="Detail"
+                component={<ItemDetail></ItemDetail>}
+              />
             </Route>
 
             <Route path="/todolist">
-
-              <h1>Seznam úkolů</h1>
-              <TodoList />
-
+              <Screen
+                title="Seznam úkolů"
+                component={<TodoList />}
+              />
             </Route>
 
-            <Route path="/table_with_filter_1">
-
-              <h1>Deklarativní tabulka  s filtrem</h1>
-              <FilterTable
-                baseUri={"http://localhost:3004/todos"}
-                columns={todos_columns}
-                filters={filters}
-              ></FilterTable>
-
+            <Route path="/table_with_button_filter">
+              <Screen
+                title="Tabulka s button filtrem"
+                component={
+                  <FilterTable
+                    baseUri={"http://localhost:3004/todos"}
+                    columns={todos_columns}
+                    filters={filters}
+                  ></FilterTable>
+                }
+              />
             </Route>
-            <Route path="/table_with_filter_2">
 
-              <h1>Deklarativní tabulka s filtrem</h1>
-              <FilterTable2
-                baseUri={"http://localhost:3004/users"}
-                columns={users_column}
-                filters={filters2}
-              ></FilterTable2>
-
+            <Route path="/table_with_input_filter">
+              <Screen
+                title="Tabulka s input filtrem"
+                component={
+                  <FilterTable2
+                    baseUri={"http://localhost:3004/users"}
+                    columns={users_column}
+                    filters={filters2}
+                  ></FilterTable2>
+                }
+              />
             </Route>
-            <Route path="/table_with_paging">
 
-              <h1>Deklarativní tabulka se stránkováním</h1>
-              <PagingTable
-                baseUri={"http://localhost:3004/todos"}
-                columns={todos_columns}
-              ></PagingTable>
-
+            <Route path="/table_with_pagging">
+              <Screen
+                title="Deklarativní tabulka se stránkováním"
+                component={
+                  <PagingTable
+                    baseUri={"http://localhost:3004/todos"}
+                    columns={todos_columns}
+                  ></PagingTable>
+                }
+              />
             </Route>
           </Switch>
-        </div>
       </Router>
 
 
+    </div >
 
-
-      <div className="App" >
-
-
-        {/*
-          <h1>Seznam úkolů</h1>
-          <TodoList />
-  
-          <h1>Deklarativní tabulka  s filtrem</h1>
-          <FilterTable
-            baseUri={"http://localhost:3004/todos"}
-            columns={todos_columns}
-            filters={filters}
-          ></FilterTable>
-  
-          <h1>Deklarativní tabulka s filtrem</h1>
-          <FilterTable2
-            baseUri={"http://localhost:3004/users"}
-            columns={users_column}
-            filters={filters2}
-          ></FilterTable2>
-  
-          <h1>Deklarativní tabulka se stránkováním</h1>
-          <PagingTable
-            baseUri={"http://localhost:3004/todos"}
-            columns={todos_columns}
-          ></PagingTable>
-  */}
-
-      </div >
-    </>
   );
 }
 
